@@ -1,0 +1,105 @@
+{
+  "name": "markdown-angel",
+  "displayName": "Markdown Angel",
+  "description": "Advanced markdown viewer and editor with AI-optimized compact mode",
+  "version": "1.0.2",
+  "publisher": "Cattt",
+  "icon": "markdown_angel_logo.jpg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cattt/markdown-angel"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Formatters",
+    "Other"
+  ],
+  "keywords": [
+    "markdown",
+    "viewer",
+    "editor",
+    "compact",
+    "ai"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "markdown-angel.openViewer",
+        "title": "Markdown Angel: Open Viewer",
+        "icon": "$(preview)"
+      },
+      {
+        "command": "markdown-angel.toggleMode",
+        "title": "Markdown Angel: Toggle Compact/Human Mode"
+      },
+      {
+        "command": "markdown-angel.goToTop",
+        "title": "Markdown Angel: Go to Top"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "markdown-angel.openViewer",
+          "when": "resourceLangId == markdown",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "markdown-angel.toggleMode",
+          "when": "resourceLangId == markdown",
+          "group": "markdown-angel"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "markdown-angel.openViewer",
+        "key": "ctrl+shift+v",
+        "mac": "cmd+shift+v",
+        "when": "resourceLangId == markdown"
+      },
+      {
+        "command": "markdown-angel.toggleMode",
+        "key": "ctrl+alt+m",
+        "mac": "cmd+alt+m",
+        "when": "resourceLangId == markdown"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/markdown-it": "^13.0.7",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.75.0",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "@vscode/test-electron": "^2.2.3",
+    "@vscode/vsce": "^2.22.0",
+    "eslint": "^8.34.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "markdown-it": "^14.0.0",
+    "markdown-it-anchor": "^8.6.7",
+    "markdown-it-table-of-contents": "^0.6.0"
+  }
+}
