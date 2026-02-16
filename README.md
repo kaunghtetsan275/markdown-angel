@@ -1,7 +1,9 @@
 # Markdown Angel 👼
 
-[![Version](https://img.shields.io/badge/version-1.0.3-blue.svg)](https://marketplace.visualstudio.com/items?itemName=Cattt.markdown-angel)
+[![Version](https://img.shields.io/badge/version-1.0.5-blue.svg)](https://marketplace.visualstudio.com/items?itemName=Cattt.markdown-angel)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![CI/CD](https://img.shields.io/github/actions/workflow/status/:user/:repo/:workflow
+)](https://github.com/kaunghtetsan275/markdown-angel/actions)
 
 **Transform your markdown workflow with AI-optimized formatting and beautiful viewing.**
 
@@ -19,12 +21,13 @@ Experience markdown like never before with our custom-built viewer:
 
 - **GitHub-Flavored Rendering** - Clean, professional markdown display that matches GitHub's style
 - **Auto-Generated Table of Contents** - Navigate large documents effortlessly with automatic TOC generation from headers
+- **✨ NEW: Collapsible TOC Panel** - Toggle button in TOC header to show/hide sidebar for distraction-free reading
+- **✨ NEW: External Image Support** - Display images from URLs and external sources directly in preview
 - **Go to Top Button** - Floating button for instant return to document start
 - **Live Sync** - Real-time updates as you type, no manual refresh needed
 - **Syntax Highlighting** - Beautiful code block formatting with language-specific highlighting
 - **Smooth Navigation** - Click any TOC item to jump directly to that section
-
-![Viewer Demo](https://via.placeholder.com/600x300/5B6A9B/FFFFFF?text=Markdown+Viewer)
+- **State Persistence** - Remembers your TOC visibility preference across sessions
 
 ### ⚡ Compact Mode (AI-Optimized)
 
@@ -235,7 +238,23 @@ All available commands in Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`):
 
 ## 📝 Release Notes
 
-### 1.0.3 (Latest)
+### 1.0.5 (Latest)
+- ✨ **NEW**: Collapsible TOC panel with toggle button in sidebar header
+- ✨ **NEW**: External image support - display images from URLs in preview
+- ✨ **NEW**: Comprehensive test suite with 17 automated tests
+- ✨ **NEW**: GitHub Actions CI/CD pipeline for multi-platform testing
+- 🎯 **FIXED**: TOC toggle button now positioned in panel header (no text overlap)
+- 🎯 **IMPROVED**: Smooth animations and state persistence for TOC visibility
+- 🧪 **QUALITY**: Automated testing on Ubuntu, Windows, macOS with Node 16.x & 18.x
+- 🚀 **AUTOMATION**: Auto-publish to marketplace on GitHub releases
+
+### 1.0.4
+- 📦 Enhanced package.json with comprehensive metadata
+- 👤 Added author information and licensing details
+- 🏆 Added marketplace badges (version, installs, rating)
+- 🔍 Extended keywords for better discoverability
+
+### 1.0.3
 - 🎨 Enhanced README with rich formatting
 - 📚 Added comprehensive feature descriptions
 - 🔗 Updated repository links

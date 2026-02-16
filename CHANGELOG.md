@@ -1,5 +1,27 @@
 # Change Log
 
+## [1.0.5] - 2026-02-16
+### Added
+- TOC panel toggle button in sidebar header to show/hide table of contents
+- Comprehensive test suite for all components (17 tests)
+- GitHub Actions CI/CD workflow for automated testing and deployment
+- Tests for extension activation and commands
+- Tests for markdown formatter (compact and human modes)
+- Tests for mode manager functionality
+- Automated testing on multiple platforms (Ubuntu, Windows, macOS)
+- Automated marketplace publishing on releases
+
+### Fixed
+- Image display from URLs in markdown preview (fixed CSP policy)
+- Images from external URLs now load correctly in viewer
+- TOC toggle button positioning - now in panel header without covering content
+
+### Changed
+- Enhanced viewer with collapsible TOC sidebar
+- Improved user experience with TOC toggle animation
+- Added state persistence for TOC visibility preference
+- Toggle button integrated into TOC header for better UX
+
 ## [1.0.4] - 2026-02-16
 ### Added
 - Enhanced package.json manifest with comprehensive metadata

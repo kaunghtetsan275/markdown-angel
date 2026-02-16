@@ -174,7 +174,7 @@ export class MarkdownViewer implements vscode.Disposable {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src ${webview.cspSource} 'unsafe-inline'; script-src 'nonce-${nonce}';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src ${webview.cspSource} https: http: data:; style-src ${webview.cspSource} 'unsafe-inline'; script-src 'nonce-${nonce}';">
     <title>Markdown Preview</title>
     <style>
         * {
@@ -208,10 +208,45 @@ export class MarkdownViewer implements vscode.Disposable {
             overflow-y: auto;
             padding: 20px;
             z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        .toc-sidebar.hidden {
+            transform: translateX(-100%);
         }
 
         .toc-sidebar h2 {
             font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 15px 0;
+            color: var(--vscode-sideBarTitle-foreground);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .toc-toggle {
+            background-color: var(--vscode-button-background);
+            color: var(--vscode-button-foreground);
+            border: none;
+            border-radius: 4px;
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .toc-toggle:hover {
+            background-color: var(--vscode-button-hoverBackground);
+            transform: scale(1.05);
+        }
+
+        .toc-toggle:active {
+            transform: scale(0.95);
+        }
             font-weight: 600;
             margin: 0 0 15px 0;
             color: var(--vscode-sideBarTitle-foreground);
@@ -250,6 +285,11 @@ export class MarkdownViewer implements vscode.Disposable {
             margin-left: 250px;
             padding: 30px 40px;
             max-width: 980px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .toc-sidebar.hidden ~ .content {
+            margin-left: 0;
         }
 
         /* GitHub-Flavored Markdown Styling */
@@ -512,8 +552,14 @@ export class MarkdownViewer implements vscode.Disposable {
 </head>
 <body>
     <div class="container">
-        <nav class="toc-sidebar">
-            <h2>📑 Table of Contents</h2>
+        <nav class="toc-sidebar" id="tocSidebar">
+            <h2>
+                <span>📑 Table of Contents</span>
+                <button class="toc-toggle" id="tocToggle" title="Toggle Table of Contents">
+                    <span id="tocToggleIcon">✕</span>
+                    <span id="tocToggleText">Hide</span>
+                </button>
+            </h2>
             <div id="toc-container">
                 <!-- TOC will be injected here -->
             </div>
@@ -532,6 +578,28 @@ export class MarkdownViewer implements vscode.Disposable {
             const vscode = acquireVsCodeApi();
             const goToTopBtn = document.getElementById('goToTopBtn');
             const content = document.getElementById('content');
+            const tocToggle = document.getElementById('tocToggle');
+            const tocSidebar = document.getElementById('tocSidebar');
+            const tocToggleIcon = document.getElementById('tocToggleIcon');
+            const tocToggleText = document.getElementById('tocToggleText');
+
+            // Restore TOC visibility state
+            const state = vscode.getState() || { tocVisible: true };
+            if (!state.tocVisible) {
+                tocSidebar.classList.add('hidden');
+                tocToggleIcon.textContent = '☰';
+                tocToggleText.textContent = 'Show';
+            }
+
+            // Toggle TOC visibility
+            tocToggle.addEventListener('click', function() {
+                const isHidden = tocSidebar.classList.toggle('hidden');
+                tocToggleIcon.textContent = isHidden ? '☰' : '✕';
+                tocToggleText.textContent = isHidden ? 'Show' : 'Hide';
+                
+                // Save state
+                vscode.setState({ tocVisible: !isHidden });
+            });
 
             // Extract TOC from rendered content
             const tocElement = content.querySelector('.table-of-contents');
