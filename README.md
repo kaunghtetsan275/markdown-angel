@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/badge/version-1.0.5-blue.svg)](https://marketplace.visualstudio.com/items?itemName=Cattt.markdown-angel)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-)](https://github.com/kaunghtetsan275/markdown-angel/actions)
+<!-- [![CI/CD](https://img.shields.io/github/actions/workflow/status/:user/:repo/:workflow)](https://github.com/kaunghtetsan275/markdown-angel/actions) -->
 
 **Transform your markdown workflow with AI-optimized formatting and beautiful viewing.**
 
