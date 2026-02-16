@@ -2,12 +2,20 @@
   "name": "markdown-angel",
   "displayName": "Markdown Angel",
   "description": "Advanced markdown viewer and editor with AI-optimized compact mode",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "Cattt",
   "icon": "markdown_angel_logo.jpg",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cattt/markdown-angel"
+    "url": "https://github.com/kaunghtetsan275/markdown-angel"
+  },
+  "bugs": {
+    "url": "https://github.com/kaunghtetsan275/markdown-angel/issues"
+  },
+  "homepage": "https://github.com/kaunghtetsan275/markdown-angel#readme",
+  "galleryBanner": {
+    "color": "#5B6A9B",
+    "theme": "dark"
   },
   "engines": {
     "vscode": "^1.75.0"
