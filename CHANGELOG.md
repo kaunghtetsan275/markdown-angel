@@ -1,5 +1,18 @@
 # Change Log
 
+## [1.0.4] - 2026-02-16
+### Added
+- Enhanced package.json manifest with comprehensive metadata
+- Author information and licensing details
+- Marketplace badges (version, installs, rating)
+- Extended keywords for better discoverability
+- QnA marketplace support indicator
+- Complete repository and bug tracking URLs
+
+### Changed
+- Updated package.json with all optional VSCode extension manifest attributes
+- Enhanced extension metadata for better marketplace presentation
+
 ## [1.0.3] - 2026-02-16
 ### Added
 - Comprehensive README with rich formatting and visual examples

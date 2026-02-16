@@ -2,17 +2,41 @@
   "name": "markdown-angel",
   "displayName": "Markdown Angel",
   "description": "Advanced markdown viewer and editor with AI-optimized compact mode",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "publisher": "Cattt",
+  "author": {
+    "name": "Kevin",
+    "url": "https://github.com/kaunghtetsan275"
+  },
+  "license": "MIT",
   "icon": "markdown_angel_logo.jpg",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kaunghtetsan275/markdown-angel"
+    "url": "https://github.com/kaunghtetsan275/markdown-angel.git"
   },
   "bugs": {
-    "url": "https://github.com/kaunghtetsan275/markdown-angel/issues"
+    "url": "https://github.com/kaunghtetsan275/markdown-angel/issues",
+    "email": "kevin@cattt.co"
   },
   "homepage": "https://github.com/kaunghtetsan275/markdown-angel#readme",
+  "qna": "marketplace",
+  "badges": [
+    {
+      "url": "https://img.shields.io/visual-studio-marketplace/v/Cattt.markdown-angel",
+      "href": "https://marketplace.visualstudio.com/items?itemName=Cattt.markdown-angel",
+      "description": "Version"
+    },
+    {
+      "url": "https://img.shields.io/visual-studio-marketplace/i/Cattt.markdown-angel",
+      "href": "https://marketplace.visualstudio.com/items?itemName=Cattt.markdown-angel",
+      "description": "Installs"
+    },
+    {
+      "url": "https://img.shields.io/visual-studio-marketplace/r/Cattt.markdown-angel",
+      "href": "https://marketplace.visualstudio.com/items?itemName=Cattt.markdown-angel",
+      "description": "Rating"
+    }
+  ],
   "galleryBanner": {
     "color": "#5B6A9B",
     "theme": "dark"
@@ -30,7 +54,12 @@
     "viewer",
     "editor",
     "compact",
-    "ai"
+    "ai",
+    "formatter",
+    "preview",
+    "toc",
+    "table-of-contents",
+    "ai-optimized"
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
